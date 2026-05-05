@@ -13,7 +13,7 @@ import { saveTags, TagsInputSchema } from "./lib/tags.js";
 import { listPending, getStats } from "./lib/pending.js";
 import { printHelp, renderBanner } from "./banner.js";
 
-const VERSION = "0.1.4";
+const VERSION = "0.1.5";
 
 // CLI flags. If matched, print and exit before starting the MCP server
 // (printing to stdout would corrupt the MCP stdio protocol).

@@ -11,12 +11,31 @@ import { scanFolder } from "./lib/scan.js";
 import { search, findSimilar } from "./lib/search.js";
 import { saveTags, TagsInputSchema } from "./lib/tags.js";
 import { listPending, getStats } from "./lib/pending.js";
+import { printHelp, renderBanner } from "./banner.js";
+
+const VERSION = "0.1.3";
+
+// CLI flags. If matched, print and exit before starting the MCP server
+// (printing to stdout would corrupt the MCP stdio protocol).
+const argv = process.argv.slice(2);
+if (argv.includes("--help") || argv.includes("-h")) {
+  printHelp(VERSION);
+  process.exit(0);
+}
+if (argv.includes("--version") || argv.includes("-v")) {
+  process.stdout.write(`${VERSION}\n`);
+  process.exit(0);
+}
+if (argv.includes("--banner")) {
+  process.stdout.write(renderBanner(VERSION));
+  process.exit(0);
+}
 
 const config = loadConfig();
 const db = openDb(config.dbPath);
 
 const server = new Server(
-  { name: "garden-skill", version: "0.1.0" },
+  { name: "garden-skill", version: VERSION },
   { capabilities: { tools: {} } }
 );
 

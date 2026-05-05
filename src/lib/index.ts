@@ -1,0 +1,12 @@
+export { openDb } from "../db/client.js";
+export { scanFolder } from "./scan.js";
+export { extractPalette } from "./colors.js";
+export { computePhash, phashDistance } from "./phash.js";
+export { search, findSimilar } from "./search.js";
+export { saveTags, TagsInputSchema } from "./tags.js";
+export { listPending, getStats } from "./pending.js";
+export type { ScanResult, ScanOptions } from "./scan.js";
+export type { PaletteColor } from "./colors.js";
+export type { SearchFilters, SearchHit, SimilarHit } from "./search.js";
+export type { TagsInput } from "./tags.js";
+export type { PendingImage } from "./pending.js";

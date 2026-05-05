@@ -1,0 +1,61 @@
+{
+  "name": "@useotto/garden",
+  "version": "0.1.0",
+  "description": "Turn any folder of images into a searchable, design-focused reference library. Skill for AI agents.",
+  "type": "module",
+  "bin": {
+    "garden-skill": "./dist/server.js"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./tools": "./dist/tools/index.js",
+    "./lib": "./dist/lib/index.js"
+  },
+  "files": [
+    "dist",
+    "SKILL.md",
+    "README.md",
+    "skill.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wwwwaaaaddddeeee/garden-skill"
+  },
+  "homepage": "https://ot-to.org",
+  "scripts": {
+    "build": "tsc && cp src/db/schema.sql dist/db/schema.sql",
+    "dev": "tsc --watch",
+    "start": "node dist/server.js",
+    "scan": "node dist/scripts/scan.js",
+    "test:smoke": "node dist/scripts/smoke.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "better-sqlite3": "^11.5.0",
+    "sharp": "^0.33.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "ai-agent",
+    "design",
+    "reference",
+    "pinterest",
+    "image-search",
+    "otto-skill"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

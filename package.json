@@ -1,6 +1,6 @@
 {
   "name": "@useotto/garden",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Turn any folder of images into a searchable, design-focused reference library. Skill for AI agents.",
   "type": "module",
   "bin": {

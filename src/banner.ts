@@ -23,7 +23,8 @@ const ART = String.raw`          000000000000000
          0000000000000000                0000000000        00000000000         00000000000000       `
 
 export function renderBanner(version: string): string {
-  const gradientArt = gradient(['#22c55e', '#84cc16', '#0ea5e9']).multiline(ART)
+  const blocks = ART.replace(/0/g, '█')
+  const gradientArt = gradient(['#22c55e', '#84cc16', '#0ea5e9']).multiline(blocks)
   const tagline = gradient(['#84cc16', '#0ea5e9'])('  design reference library for any AI agent')
   const meta = `\n  v${version}  ·  @useotto/garden  ·  https://ot-to.org/skills/garden\n`
   return `\n${gradientArt}\n\n${tagline}\n${meta}`
